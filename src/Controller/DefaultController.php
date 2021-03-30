@@ -7,7 +7,9 @@ class DefaultController{
 
     // Page d'Accueil du site
     public function home(){
-        echo "<h1>Page d'Accueil | Controller </h1>";
+        //echo "<h1>Page d'Accueil | Controller </h1>";
+        // ici on remplace le echo par le include de VIEWS 
+        include(VIEWS.'default/home.php'); 
     }
 
     // page permettant de lister les articles d'une catégorie. 
