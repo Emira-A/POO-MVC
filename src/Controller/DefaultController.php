@@ -14,12 +14,12 @@ class DefaultController{
 
     // page permettant de lister les articles d'une catégorie. 
     public function category(){
-        echo "<h1>Page Catégorie | Controller </h1>";
+        include(VIEWS.'default/category.php');
     }
 
     // page permettant d'afficher un article. 
     public function post(){
-        echo "<h1>Page Article | Controller </h1>";
+        include(VIEWS.'default/post.php');
     }
 
 }

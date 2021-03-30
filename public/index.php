@@ -20,8 +20,13 @@ echo '</pre>';
 require_once '../config/config.php'; 
 
 // Autochargement des classes
+
+require_once '../vendor/autoload.php'; // ici on ajoute le autoload du dossier vendor apparue aprés l'installation des composer symfony. et on enlève le autoload ci dessous
+
 // On a remplacer les require pour chaque page par le autolaod.php qui importe automatiquement les class pour nous 
-require_once '../autoload.php'; 
+// require_once '../autoload.php'; 
+
+
 
 
 // ici on a fait un cmd -> x des 4 lignes puis on les a coller dans le fichier app.php

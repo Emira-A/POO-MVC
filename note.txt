@@ -18,6 +18,18 @@ ${$controller}->$action();
 FONCTION spl_autoload_register
 https://www.php.net/manual/fr/function.spl-autoload-register.php
 
+Site de contenue pour les projets 
+listes de librairy 
+https://packagist.org/
+
+on a besoin d'un logiciel qui s'appelle COMPOSER , il va nous permettre de gerer nos dépendance PHP (librairy d'autre personnes que l'on utilise)
+Il va faire les mises à jours seuls et il va s'occuper de faire l'autochargement des classes (notre fichier autoload)
+https://getcomposer.org/
+
+commande dans le terminal: php composer.phar require --dev symfony/var-dumper
+
+commande dans le terminal aprés la modification de composer.json : php composer.phar dump-autoload
+
 **************************************************************
 // ****************   CODE INDEX COMPLET: **************** //
 **************************************************************
