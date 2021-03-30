@@ -20,12 +20,7 @@ print_r($_GET);
 echo '</pre>'; 
 */
 
-// Récupération des paramètres GET et affectation dans une variable. 
-$controller = ucfirst($_GET['controller']) . 'Controller'; 
-$action = $_GET['action']; 
+// ici on a fait un cmd -> x des 4 lignes puis on les a coller dans le fichier app.php
 
-// Approche avec variable PHP dynamique  
-$$controller = new $controller(); 
-${$controller}->$action(); 
-
-
+// Chargement de notre application 
+require_once '../app.php'; 
