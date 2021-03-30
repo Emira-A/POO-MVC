@@ -1,5 +1,8 @@
 <?php
 
+// On déclare le namespace après l'ajout des composer sur le terminal. Il indique où se situe notre class dans l'arborésance des dossiers en partant de App
+namespace App\Controller; 
+
 // lorsqu'on crée un controller on ajoute toujours "Controller" au nom
 class DefaultController{
 
