@@ -1,0 +1,99 @@
+client --> front controler --> 
+
+Sur le navigateur on met dans l'URL: 
+localhost:8888/POO-MVC/index.php?controller=default&action=home
+avec uniquement "localhost:8888/POO-MVC/" on avait un Array vide et en ajoutant le "/index.php?controller=default&action=home" on a le parametre controller et action qui apparaissent 
+
+Variable dynamique sur php
+https://www.php.net/manual/fr/language.variables.variable.php
+
+php va auto déclarer la variable et va utiliser la variable qu'il a daclarer 
+
+$$controller -> php va créer une variable qui s'appelle defaultController
+
+// Approche variable dynamique 
+$$controller = new $controller(); 
+${$controller}->$action(); 
+
+FONCTION spl_autoload_register
+https://www.php.net/manual/fr/function.spl-autoload-register.php
+
+**************************************************************
+// ****************   CODE INDEX COMPLET: **************** //
+**************************************************************
+<?php
+
+// Importation des Controllers
+/*
+require_once 'src/Controller/DefaultController.php'; 
+require_once 'src/Controller/UserController.php'; 
+*/
+// on remplace les require_once par le seul autoload après création de notre fichier "autoload.php"
+// On a remplacer les require pour chaque page par le autolaod.php qui importe automatiquement les class pour nous 
+
+require_once 'autoload.php'; 
+
+/*
+ * Ici, notre fichier index.php représente
+ * notre controleur frontal.
+ * -----------------------------------------
+ * Il a pour charge de rediriger la requète
+ * de l'utilisateur vers le bon controleur
+ * en s'aidant des paramètres dans l'URL.
+ */
+
+// Aperçu de $_GET
+/*
+echo '<pre>'; 
+print_r($_GET); 
+echo '</pre>'; 
+*/
+
+// Récupération des paramètres GET et affectation dans une variable. 
+$controller = ucfirst($_GET['controller']) . 'Controller'; 
+$action = $_GET['action']; 
+
+/* Version raccourcie
+$objet = new $controller(); // DefaultControler, AdminController, ...
+$objet->$action(); 
+*/
+
+// Approche avec variable PHP dynamique  
+$$controller = new $controller(); 
+${$controller}->$action(); 
+
+/*
+Les 2 lignes ci dessus remplace les conditions ci dessous
+-> $objet = new $controller(); 
+   $objet->$action(); 
+
+Fait à la main - Mise en commentaire
+
+// Création d'une instance
+$defaultCtrl = new DefaultController(); 
+
+// page Accueil
+if ($controller == 'default' && $action == 'home'){
+    $defaultCtrl->home();
+}
+
+// page Catégorie
+if ($controller == 'default' && $action == 'category'){
+    $defaultCtrl->category(); 
+}
+
+// page Article
+if ($controller == 'default' && $action == 'post'){
+    $defaultCtrl->post();
+}
+
+// page Connexion
+if ($controller == 'default' && $action == 'login'){
+    echo "<h1>Page Connexion</h1>";
+}
+
+// page Inscription
+if ($controller == 'default' && $action == 'register'){
+    echo "<h1>Page Inscription</h1>";
+}
+*/
