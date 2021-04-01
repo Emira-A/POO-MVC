@@ -109,3 +109,24 @@ if ($controller == 'default' && $action == 'register'){
     echo "<h1>Page Inscription</h1>";
 }
 */
+
+AbstractController
+Principe des propriété mère et fille 
+quand une propriété est privé la class fille n'y a pas accés. C'est une propriété de la mère. 
+
+
+Exemple pour fonction static dans le fichier DB
+
+Class a
+// non statique je passe par mon objet
+$objet = new A()
+$objet->fonction(); 
+
+// statique je passe par ma classe
+A::fonction();
+
+statique -> statique OK
+statique -> non statique PAS OK
+
+non statique -> statique OK
+non statique -> non statique OK
